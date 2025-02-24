@@ -1,11 +1,11 @@
 from turtle import Turtle
-import turtle
+# import turtle
 import random
 
-turtle.colormode(255)
-shapes = ["turtle", "circle", "square", "triangle"]
+# turtle.colormode(255)
+SHAPES = ["turtle", "circle", "square"]
 
-# FOOD_COLORS = ["red", "green", "orange", "pink", "yellow", "purple"]
+FOOD_COLORS = ["cyan", "aquamarine", "orange", "pink", "yellow", "LightGreen", "maroon1", "SpringGreen"]
 
 class Food(Turtle):
     def __init__(self):
@@ -26,10 +26,10 @@ class Food(Turtle):
         self.goto(random_x, random_y)
 
     def food_random_colors(self):
-        r = random.randint(50, 255)
-        g = random.randint(50, 255)
-        b = random.randint(50, 255)
-        self.color((r, g, b))
+        # r = random.randint(50, 255)
+        # g = random.randint(50, 255)
+        # b = random.randint(50, 255)
+        self.color(random.choice(FOOD_COLORS))
 
     def food_random_shapes(self):
-        self.shape(random.choice(shapes))
+        self.shape(random.choice(SHAPES))

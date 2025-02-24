@@ -1,3 +1,4 @@
+import random
 from turtle import Turtle, Screen
 
 STARTING_POSITIONS =  [(0, 0), (-20, 0), (-40, 0)]
@@ -7,6 +8,7 @@ DOWN = 270
 RIGHT = 0
 LEFT = 180
 
+BODY_COLORS = ["azure1", "chartreuse"]
 
 class Snake:
     def __init__(self):
@@ -29,10 +31,11 @@ class Snake:
         if i == 0:
             new_segment = Turtle()
             new_segment.shape("snake_head")
+            new_segment.color("white")
         else:
             new_segment = Turtle()
             new_segment.shape("snake_body")
-        new_segment.color("white")
+            new_segment.color(random.choice(BODY_COLORS))
         new_segment.pu()
         new_segment.goto(position)
         self.segments.append(new_segment)
